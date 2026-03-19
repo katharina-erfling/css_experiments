@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text-Effekte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <nav>
+        <a href="../index.html">← Zurück zur Übersicht</a>
+    </nav>
+ 
+    <main>
+ 
+        <h1>Text-Effekte</h1>
+ 
+   
+        <section class="demo">
+            <h2>Schreibmaschinen-Effekt</h2>
+            <p>Schreibmaschinen-Effekt</p>
+ 
+
+            <div class="typewriter">
+                <p id="typewriter-text">CSS Schreibmaschinen-Effekt</p>
+            </div>
+        <button class="replay-btn" onclick="replay()">↺ Nochmal</button>
+
+
+
+
+
+ 
+        </section>
+   
+    </main>
+ 
+
+
+
+<script>
+    function replay() {
+        const el = document.getElementById('typewriter-text');
+        el.style.animation = 'none';
+        el.offsetHeight; // Browser-Reflow erzwingen
+        el.style.animation = 'typing 3s steps(27) forwards, blink 1s step-end infinite';
+    }
+</script>
+</body>
+</html>
+ 
