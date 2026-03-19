@@ -2,7 +2,11 @@
 
 # 🧪 CSS Experiments
 
-Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – entstanden beim Lernen und Ausprobieren. Wird laufend erweitert.
+Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – entstanden beim Lernen und Ausprobieren.
+
+
+## 🚧 Work in Progress
+Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 
 ---
 
@@ -65,6 +69,4 @@ Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – 
 
 ---
 
-## 🚧 Work in Progress
 
-Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
