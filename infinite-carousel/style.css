@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f0f0f;
+    color: #e8e8e8;
+    min-height: 100vh;
+}
+
+
+/* -------------- */
+/* Nav */
+/* -------------- */
+
+nav {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #222;
+}
+
+nav a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e8e8e8;
+}
+
+
+/* -------------- */
+/* Main */
+/* -------------- */
+
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+main h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #cd6f9e, #553fa6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* -------------- */
+/* Demo Block     */
+/* -------------- */
+
+.demo {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.demo:last-child {
+    border-bottom: none;
+}
+
+.demo h2 {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.demo p {
+    font-size: 0.875rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.demo p code {
+    background: #1a1a1a;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #cd6f9e;
+}
+
+
+/* ================================ */
+/* Horizontale Carousel             */
+/* ================================ */
+
+.carousel {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 15s infinite linear;
+    padding-right: 1em;
+    flex-shrink: 0;
+}
+
+.card {
+    flex: 0 0 160px;
+    height: 180px;
+    padding: 1.5em 1em;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+    text-align: center;
+}
+
+.card img,
+.card svg {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.card img {
+    filter: brightness(0) saturate(100%) invert(51%) sepia(60%) saturate(500%) hue-rotate(260deg);
+}
+
+.card svg {
+    fill: #cd6f9e;
+    transition: fill 0.3s ease;
+}
+
+.card:hover svg {
+    fill: #553fa6;
+}
+
+.card strong {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #e8e8e8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card p {
+    font-size: 0.75rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@keyframes spin {
+    from { translate: 0; }
+    to   { translate: -100%; }
+}
+
+/* Fallback: ältere Browser ohne translate-Eigenschaft */
+@supports not (translate: 0) {
+    .group {
+        animation: none;
+    }
+    .carousel {
+        overflow-x: auto;
+    }
+}
+
+
+/* ================================ */
+/* Vertikale Carousels              */
+/* ================================ */
+
+.carousel-vertical {
+    display: flex;
+    gap: 1rem;
+    height: 500px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+    );
+}
+
+.logo-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.logo-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.spin-up .logo-group {
+    animation: spin-up 15s infinite linear;
+}
+
+.spin-down .logo-group {
+    animation: spin-down 15s infinite linear;
+}
+
+.logo-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    transition: border-color 0.3s ease;
+}
+
+.logo-card:hover {
+    border-color: #553fa6;
+}
+
+.logo-card img,
+.logo-card svg {
+    width: 80px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo-card img {
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.logo-card svg {
+    fill: #e8e8e8;
+    opacity: 0.7;
+    transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-card:hover img {
+    opacity: 1;
+    filter: brightness(0) saturate(100%) invert(51%) sepia(60%) saturate(500%) hue-rotate(260deg);
+}
+
+.logo-card:hover svg {
+    fill: #cd6f9e;
+    opacity: 1;
+}
+
+@keyframes spin-up {
+    from { translate: 0 0; }
+    to   { translate: 0 -100%; }
+}
+
+@keyframes spin-down {
+    from { translate: 0 -100%; }
+    to   { translate: 0 0; }
+}
+
+/* Fallback: ältere Browser ohne translate-Eigenschaft */
+@supports not (translate: 0) {
+    .logo-group {
+        animation: none;
+    }
+    .carousel-vertical {
+        overflow-y: auto;
+    }
+}
+
+
+/* ================================ */
+/* Reduced Motion                   */
+/* ================================ */
+
+/* FIX: verlangsamen statt komplett stoppen */
+@media (prefers-reduced-motion: reduce) {
+    .group,
+    .logo-group {
+        animation-duration: 30s;
+    }
+}
+
+
+/* ================================ */
+/* Responsive                       */
+/* ================================ */
+
+/* --- Tablet: bis 600px --- */
+@media (max-width: 600px) {
+
+    main {
+        padding: 2rem 1rem;
+    }
+
+    .card {
+        flex: 0 0 130px;
+        height: 160px;
+    }
+
+    /* Vertikale Carousel: nur 2 Spalten */
+    .carousel-vertical {
+        height: 400px;
+    }
+
+    .logo-column:nth-child(3),
+    .logo-column:nth-child(4) {
+        display: none;
+    }
+}
+
+/* --- Mobile: bis 400px --- */
+@media (max-width: 400px) {
+
+    .card {
+        flex: 0 0 110px;
+        height: 150px;
+    }
+
+    .card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Vertikale Carousel: nur 1 Spalte */
+    .carousel-vertical {
+        height: 350px;
+    }
+
+    .logo-column:nth-child(2) {
+        display: none;
+    }
+}
