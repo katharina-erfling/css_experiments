@@ -1,9 +1,7 @@
 <img width="1014" height="515" alt="Screenshot 2026-03-19 115643" src="https://github.com/user-attachments/assets/7418fbf4-6b53-4212-8d77-79683288e549" />
 
 # 🧪 CSS Experiments
-
 Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – entstanden beim Lernen und Ausprobieren.
-
 
 ## 🚧 Work in Progress
 Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
@@ -11,22 +9,27 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 ---
 
 ## 📁 Projektstruktur
-
 ```
 /
-├── index.html              ← Übersichtsseite
+├── index.html                  ← Übersichtsseite
 ├── css/
 │   └── index.css
-├── link-effects/           ← Link Hover-Effekte
+├── link-effects/               ← Link Hover-Effekte
 │   ├── index.html
 │   └── style.css
-├── effects/                ← CSS Effekte
+├── effects/                    ← CSS Effekte
 │   ├── index.html
 │   └── style.css
-├── todo/                   ← Animierte Checkbox
+├── todo/                       ← Animierte Checkbox
 │   ├── index.html
 │   └── style.css
-└── carousel/               ← CSS Only Carousel
+├── carousel/                   ← CSS Only Carousel
+│   ├── index.html
+│   └── style.css
+├── text-effekte/               ← Text-Effekte
+│   ├── index.html
+│   └── style.css
+└── infinite-carousel/          ← Infinite Carousel
     ├── index.html
     └── style.css
 ```
@@ -37,7 +40,6 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 
 ### 🔗 Link Hover-Effekte
 6 verschiedene Hover-Animationen für Links – alle rein per CSS:
-
 - **Farbslider** – `box-shadow: inset` expandiert von links und übermalt den Hintergrund
 - **Textflip** – alter Text gleitet raus, neuer rein per `translate3d` und `data-replace` Attribut
 - **Textmarker** – Hintergrund wächst von unten nach oben per `::before` Pseudo-Element
@@ -60,13 +62,23 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 - `prefers-reduced-motion` Support
 - Aktuell unterstützt in Chrome Canary
 
+### ✍️ Text-Effekte
+- **Schreibmaschinen-Effekt** – Text tippt sich Zeichen für Zeichen per `width`-Animation und `steps()` ein
+- Cursor blinkt per `border-right` Animation
+- Replay-Button setzt die Animation per JavaScript zurück (`animation: none` → Reflow erzwingen → neu setzen)
+- Wird laufend um weitere Texteffekte ergänzt
+
+### 🎡 Infinite Carousel
+- **Horizontales Auto-Scroll Carousel** – nahtloser Loop per `@keyframes` und `translate`, zwei identische Gruppen für den Infinite-Effekt
+- **Vertikale Auto-Scroll Carousels** – vier Spalten im Wechsel hoch und runter per `translateY`
+- Fade-Effekt oben und unten per `mask-image` Gradient
+- `aria-hidden="true"` auf duplizierten Gruppen für Screenreader
+- Fallback per `@supports not (translate: 0)` für ältere Browser
+- `prefers-reduced-motion` verlangsamt statt stoppt
+
 ---
 
 ## 🛠️ Technologien
-
 - **HTML5** – semantisches Markup
-- **CSS3** – `::before`/`::after`, `@keyframes`, `transform`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`
-
----
-
-
+- **CSS3** – `::before`/`::after`, `@keyframes`, `transform`, `translate`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`, `mask-image`, `steps()`
+- **JavaScript** – minimal, nur für Animation-Reset (Text-Effekte)
