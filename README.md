@@ -6,6 +6,11 @@ Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – 
 
 ---
 
+## 🚧 Work in Progress
+
+Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
+
+
 ## 📁 Projektstruktur
 
 ```
@@ -65,6 +70,4 @@ Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – 
 
 ---
 
-## 🚧 Work in Progress
 
-Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
