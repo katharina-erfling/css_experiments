@@ -1,4 +1,5 @@
 <img width="1014" height="515" alt="Screenshot 2026-03-19 115643" src="https://github.com/user-attachments/assets/7418fbf4-6b53-4212-8d77-79683288e549" />
+
 # 🧪 CSS Experiments
  
 Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – entstanden beim Lernen und Ausprobieren. Wird laufend erweitert.
