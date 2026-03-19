@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Hover-Effekte – CSS Experiments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html">← Zurück zur Übersicht</a>
+    </nav>
+
+    <main>
+
+        <h1>Link Hover-Effekte</h1>
+
+        <div class="demo">
+            <h2>Farbslider</h2>
+            <p>Box-Shadow von innen expandiert beim Hover – Farbe schiebt sich von links rein.</p>
+            <a href="#" class="farbslider">Hover über mich</a>
+        </div>
+
+        <div class="demo">
+            <h2>Textflip</h2>
+            <p>Alter Text gleitet raus, neuer Text gleitet rein – per <code>translate3d</code> und <code>data-replace</code>.</p>
+            <a href="#" class="textflip" data-replace="Ich bin der neue Text!">
+                <span>Hover über mich</span>
+            </a>
+        </div>
+
+        <div class="demo">
+            <h2>Textmarker</h2>
+            <p>Hintergrund wächst von unten nach oben – wie ein Textmarker der über den Text fährt.</p>
+            <a href="#" class="textmarker">Hover über mich</a>
+        </div>
+
+        <div class="demo">
+            <h2>Right–Left Color Swap</h2>
+            <p>Farbe und Unterstrich gleiten von rechts nach links – per <code>background-clip: text</code>.</p>
+            <a href="#" class="rightleft_swap">Hover über mich</a>
+        </div>
+
+        <div class="demo">
+            <h2>Rainbow Underline</h2>
+            <p>Regenbogen-Unterstrich zieht sich von links nach rechts beim Hover.</p>
+            <a href="#" class="rainbow">Hover über mich</a>
+        </div>
+
+        <div class="demo">
+            <h2>Passing Underline</h2>
+            <p>Unterstrich erscheint von links, verschwindet nach rechts beim Mouse-Out.</p>
+            <a href="#" class="passing_underline">Hover über mich</a>
+        </div>
+
+    </main>
+
+</body>
+</html>

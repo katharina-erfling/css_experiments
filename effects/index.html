@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Effekte – CSS Experiments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html">← Zurück zur Übersicht</a>
+    </nav>
+
+    <main>
+
+        <h1>CSS Effekte</h1>
+
+        <!-- Loader -->
+        <section class="demo">
+            <h2>Spinner / Loader</h2>
+            <p>Reiner CSS-Spinner per <code>@keyframes</code> und <code>border-radius</code> – kein JavaScript.</p>
+            <div class="loader-wrapper">
+                <div class="loader"></div>
+            </div>
+        </section>
+
+        <!-- Tooltip -->
+        <section class="demo">
+            <h2>CSS Tooltip</h2>
+            <p>Tooltip erscheint beim Hover – positioniert per <code>position: absolute</code>, animiert per <code>opacity</code> und <code>transform</code>.</p>
+            <p class="tooltip-demo">Das ist ein
+                <span class="base">
+                    <span class="content">Awesome</span>
+                    Tooltip.
+                </span>
+                Hover über das Wort!
+            </p>
+        </section>
+
+        <!-- Sibling Effekt -->
+        <section class="demo">
+            <h2>Sibling-Fade</h2>
+            <p>Geschwister-Elemente verblassen beim Hover auf eines – per <code>:not(:hover)</code> Selektor.</p>
+            <div class="boxes">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
