@@ -29,7 +29,10 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 ├── text-effekte/               ← Text-Effekte
 │   ├── index.html
 │   └── style.css
-└── infinite-carousel/          ← Infinite Carousel
+├── infinite-carousel/          ← Infinite Carousel
+│   ├── index.html
+│   └── style.css
+└── glass-effect/               ← Glass Morphism Effekt
     ├── index.html
     └── style.css
 ```
@@ -76,9 +79,16 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 - Fallback per `@supports not (translate: 0)` für ältere Browser
 - `prefers-reduced-motion` verlangsamt statt stoppt
 
+### 🪟 Glass Morphism
+- Milchglas-Effekt per `backdrop-filter: blur()` und halbtransparenter Hintergrundfarbe
+- Subtile Border-Highlights per `border-top` und `border-left` mit `rgba()`
+- `-webkit-backdrop-filter` für Safari-Kompatibilität
+- Responsive Card per `min()` und `clamp()`
+- `prefers-reduced-motion` Support
+
 ---
 
 ## 🛠️ Technologien
 - **HTML5** – semantisches Markup
-- **CSS3** – `::before`/`::after`, `@keyframes`, `transform`, `translate`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`, `mask-image`, `steps()`
+- **CSS3** – `::before`/`::after`, `@keyframes`, `transform`, `translate`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`, `mask-image`, `steps()`, `backdrop-filter`, `min()`, `clamp()`
 - **JavaScript** – minimal, nur für Animation-Reset (Text-Effekte)
