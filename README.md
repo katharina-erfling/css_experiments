@@ -32,7 +32,11 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 ├── infinite-carousel/          ← Infinite Carousel
 │   ├── index.html
 │   └── style.css
-└── glass-effect/               ← Glass Morphism Effekt
+├── glass-effect/               ← Glass Morphism Effekt
+│   ├── index.html
+│   └── style.css
+└── 3D-Carousel/                ← 3D Carousel
+    ├── images/
     ├── index.html
     └── style.css
 ```
@@ -86,9 +90,17 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 - Responsive Card per `min()` und `clamp()`
 - `prefers-reduced-motion` Support
 
+### ⚡ 3D Carousel
+- Rotierendes 3D-Bilderkarussell per `perspective`, `transform-style: preserve-3d` und `rotateY`
+- 10 Bilder gleichmäßig im Kreis verteilt per `calc()` und CSS Custom Properties (`--position`, `--quantity`)
+- Automatische Rotation per `@keyframes` mit `rotateX(-15deg)` für den Kippwinkel
+- Neon-Typografie per `::after` Pseudo-Element mit `-webkit-text-stroke` und `rgba()` Overlay
+- Hintergrundbild positioniert per `background-position: top center` und `background-size: auto 130%`
+- `z-index`-Schichtung für Tiefenwirkung zwischen Slider, Typografie und Hintergrundbild
+
 ---
 
 ## 🛠️ Technologien
 - **HTML5** – semantisches Markup
-- **CSS3** – `::before`/`::after`, `@keyframes`, `transform`, `translate`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`, `mask-image`, `steps()`, `backdrop-filter`, `min()`, `clamp()`
+- **CSS3** – `::before`/`::after`, `@keyframes`, `transform`, `translate`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`, `mask-image`, `steps()`, `backdrop-filter`, `min()`, `clamp()`, `perspective`, `rotateY`, `translateZ`, `-webkit-text-stroke`
 - **JavaScript** – minimal, nur für Animation-Reset (Text-Effekte)
