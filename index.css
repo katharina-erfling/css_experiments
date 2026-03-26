@@ -87,6 +87,10 @@ main {
     font-size: 2rem;
 }
 
+.card-icon.neon {
+    filter: hue-rotate(300deg) saturate(5);
+}
+
 .card h2 {
     font-size: 1.1rem;
     color: #e8e8e8;
