@@ -1,5 +1,7 @@
 <img width="1014" height="515" alt="Screenshot 2026-03-19 115643" src="https://github.com/user-attachments/assets/7418fbf4-6b53-4212-8d77-79683288e549" />
 
+<img width="1014" height="515" alt="Screenshot 2026-03-19 115643" src="https://github.com/user-attachments/assets/7418fbf4-6b53-4212-8d77-79683288e549" />
+
 # 🧪 CSS Experiments
 Eine wachsende Sammlung von CSS-Spielereien, Hover-Effekten und Animationen – entstanden beim Lernen und Ausprobieren.
 
@@ -35,10 +37,13 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 ├── glass-effect/               ← Glass Morphism Effekt
 │   ├── index.html
 │   └── style.css
-└── 3D-Carousel/                ← 3D Carousel
-    ├── images/
+├── 3D-Carousel/                ← 3D Carousel
+│   ├── images/
+│   ├── index.html
+│   └── style.css
+└── social-media/               ← Icon Hover Tooltips
     ├── index.html
-    └── style.css
+    └── style.scss
 ```
 
 ---
@@ -63,11 +68,12 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 - Checkmark-Animation per `border-width` und `opacity` Transition – rein per `:checked` Pseudo-Klasse
 
 ### 🎠 CSS Only Carousel
+> 🧪 **Experimentelles CSS** – `::scroll-button()` und `::scroll-marker` sind so neu, dass sie aktuell nur in Chrome Canary laufen
+
 - Vollständiges Karussell ohne JavaScript – mit den brandneuen Pseudo-Elementen `::scroll-button()` und `::scroll-marker`
 - Navigations-Buttons und Dot-Indikatoren komplett per CSS
 - Fallback per `@supports not (selector(::scroll-button()))` – Scrollbar wird automatisch eingeblendet wenn der Browser das Feature nicht unterstützt
 - `prefers-reduced-motion` Support
-- Aktuell unterstützt in Chrome Canary
 
 ### ✍️ Text-Effekte
 - **Schreibmaschinen-Effekt** – Text tippt sich Zeichen für Zeichen per `width`-Animation und `steps()` ein
@@ -76,12 +82,13 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 - Wird laufend um weitere Texteffekte ergänzt
 
 ### 🎡 Infinite Carousel
+> ♿ **Accessibility-bewusst** – `prefers-reduced-motion` verlangsamt die Animation statt sie zu stoppen
+
 - **Horizontales Auto-Scroll Carousel** – nahtloser Loop per `@keyframes` und `translate`, zwei identische Gruppen für den Infinite-Effekt
 - **Vertikale Auto-Scroll Carousels** – vier Spalten im Wechsel hoch und runter per `translateY`
 - Fade-Effekt oben und unten per `mask-image` Gradient
 - `aria-hidden="true"` auf duplizierten Gruppen für Screenreader
 - Fallback per `@supports not (translate: 0)` für ältere Browser
-- `prefers-reduced-motion` verlangsamt statt stoppt
 
 ### 🪟 Glass Morphism
 - Milchglas-Effekt per `backdrop-filter: blur()` und halbtransparenter Hintergrundfarbe
@@ -98,9 +105,17 @@ Dieses Repo wächst mit – neue Experimente kommen regelmäßig dazu.
 - Hintergrundbild positioniert per `background-position: top center` und `background-size: auto 130%`
 - `z-index`-Schichtung für Tiefenwirkung zwischen Slider, Typografie und Hintergrundbild
 
+### 📱 Icon Hover Tooltips
+> 💡 **CSS Custom Properties als Konfigurations-API** – `--accent-color` wird direkt im HTML-Attribut gesetzt und steuert Tooltip- und Hover-Farbe pro Icon
+
+- Social-Media-Icons mit animierten Tooltips beim Hovern – per `::before` und `::after` Pseudo-Elemente
+- Tooltip und Pfeil erscheinen mit federndem Effekt per `cubic-bezier(0.6, 0.11, 0.25, 1.61)`
+- Icon-Farbe wechselt beim Hovern per `fill`-Transition
+- Umgesetzt in **SCSS** mit verschachtelten Selektoren und `&`-Referenzen
+
 ---
 
 ## 🛠️ Technologien
 - **HTML5** – semantisches Markup
-- **CSS3** – `::before`/`::after`, `@keyframes`, `transform`, `translate`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`, `mask-image`, `steps()`, `backdrop-filter`, `min()`, `clamp()`, `perspective`, `rotateY`, `translateZ`, `-webkit-text-stroke`
+- **CSS3 / SCSS** – `::before`/`::after`, `@keyframes`, `transform`, `translate`, `translate3d`, `transform-origin`, `background-clip: text`, `:not()`, `:checked`, `transition`, `scroll-snap`, `::scroll-button()`, `::scroll-marker`, `@supports`, `mask-image`, `steps()`, `backdrop-filter`, `min()`, `clamp()`, `perspective`, `rotateY`, `translateZ`, `-webkit-text-stroke`, `cubic-bezier`, `fill`, CSS Custom Properties
 - **JavaScript** – minimal, nur für Animation-Reset (Text-Effekte)
